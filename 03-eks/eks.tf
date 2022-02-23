@@ -18,7 +18,7 @@ module "eks" {
     name = "terraform_cluster"
   }
 
-  /*eks_managed_node_group_defaults = {
+  eks_managed_node_group_defaults = {
     ami_type               = "AL2_x86_64"
     disk_size              = 10
     instance_types         = ["t2.micro"]
@@ -29,8 +29,6 @@ module "eks" {
       min_size     = 1
       max_size     = 2
       desired_size = 1
-
-      instance_types = ["t2.micro"]
     }
-  }*/
+  }
 }
