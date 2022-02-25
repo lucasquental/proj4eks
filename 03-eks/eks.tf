@@ -1,7 +1,3 @@
-provider "aws"{
-  region = "sa-east-1"
-}
-
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "18.7.2"
