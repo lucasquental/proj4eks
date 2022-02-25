@@ -18,7 +18,7 @@ resource "aws_security_group" "sg_bastion"{
 resource "aws_security_group" "sg_eks"{
   name = "sg_eks"
   description = "sg_eks"
-  vpc_id = "vpc-0b5e81b583f8bd4c9"
+  vpc_id = "vpc-08a289de2c2340166"
 
   ingress {
     description      = "sg_eks"
