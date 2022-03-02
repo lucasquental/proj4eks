@@ -43,7 +43,7 @@ module "eks" {
 
   worker_groups = [
     {
-      instance_type = "t3.medium"
+      instance_type = "t2.micro"
       asg_max_size  = 3
     }
   ]
