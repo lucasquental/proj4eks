@@ -48,16 +48,3 @@ module "eks" {
     }
   ]
 }
-
-/*
-resource "helm_release" "proj2k8s" {
-  name       = "proj2k8s"
-
-  repository = "./prod-0.1.0.tgz"
-  chart      = "proj2k8s"
-
-  values = [
-    file("./values.yaml")
-  ]
-}
-*/
