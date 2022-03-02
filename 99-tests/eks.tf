@@ -16,12 +16,6 @@ provider "aws"{
     region = "sa-east-1"
 }
 
-provider "helm"{
-  kubernetes {
-    config_path = "~/.kube/config"
-  }
-}
-
 terraform {
   required_version = ">= 0.14.4"
 
@@ -38,8 +32,8 @@ module "eks" {
   version = "17.24.0"
   cluster_version = "1.21"
   cluster_name    = "terraform_cluster_homolog"
-  vpc_id          = "vpc-08a289de2c2340166"
-  subnets         = ["subnet-00c0eb4ca1be44248", "subnet-01550080c6d77c4af"]
+  vpc_id          = "vpc-0cbf736f3b24eeb20"
+  subnets         = ["subnet-03f5873486637ea01", "subnet-0c19b5235bf61be86"]
 
   worker_groups = [
     {
