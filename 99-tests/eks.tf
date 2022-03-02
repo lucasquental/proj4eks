@@ -50,15 +50,14 @@ module "eks" {
 }
 
 /*
-resource "helm_release" "nginx_ingress" {
-  name       = "nginx-ingress-controller"
+resource "helm_release" "proj2k8s" {
+  name       = "proj2k8s"
 
-  repository = "https://charts.bitnami.com/bitnami"
-  chart      = "nginx-ingress-controller"
+  repository = "./prod-0.1.0.tgz"
+  chart      = "proj2k8s"
 
-  set {
-    name  = "service.type"
-    value = "ClusterIP"
-  }
+  values = [
+    file("./values.yaml")
+  ]
 }
 */
