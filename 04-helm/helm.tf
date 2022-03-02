@@ -9,6 +9,7 @@ resource "helm_release" "proj2k8s" {
 
   repository = "./"
   chart      = "prod"
+  namespace  = "prod"
 
   values = [
     file("./values.yaml")
