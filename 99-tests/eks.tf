@@ -39,7 +39,6 @@ module "eks" {
     {
       capacity_type   = "SPOT"
       instance_types  = ["c3.large", "c4.large", "c5.large"]
-      instance_type = "t3.small"
       asg_max_size  = 3
     }
   ]
