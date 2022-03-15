@@ -37,8 +37,8 @@ module "eks" {
 
   worker_groups = [
     {
-      capacity_type   = "SPOT"
-      instance_types  = ["c3.large", "c4.large", "c5.large"]
+      asg_capacity_type   = "SPOT"
+      instance_type  = ["t3.small", "t3.medium"]
       asg_max_size  = 3
     }
   ]
