@@ -1,7 +1,7 @@
 resource "aws_security_group" "sg_bastion"{
   name = "sg_bastion"
-  description = "sg_bastion"
-  vpc_id = "vpc-0c93a2c7211607c96"
+  description = "security group for Bastion"
+  vpc_id = ["${aws_vpc.vpc_eks.id}"]
 
   ingress {
     description      = "sg_bastion"
@@ -26,8 +26,26 @@ resource "aws_security_group" "sg_bastion"{
 
 resource "aws_security_group" "sg_eks"{
   name = "sg_eks"
-  description = "sg_eks"
-  vpc_id = "vpc-0c93a2c7211607c96"
+  description = "security group for EKS"
+  vpc_id = ["${aws_vpc.vpc_eks.id}"]
+
+  ingress {
+    description      = "sg_eks"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    security_groups  = ["${aws_security_group.sg_bastion.id}"]
+  }
+  depends_on = [aws_security_group.sg_bastion]
+  tags = {
+    Name = "sg_eks"
+  }
+}
+
+resource "aws_security_group" "sg_db"{
+  name = "sg_db"
+  description = "security group for database"
+  vpc_id = ["${aws_vpc.vpc_eks.id}"]
 
   ingress {
     description      = "sg_eks"
