@@ -1,7 +1,11 @@
+provider "aws" {
+  region = "sa-east-1"
+}
+
 resource "aws_security_group" "sg_bastion"{
   name = "sg_bastion"
   description = "security group for Bastion"
-  vpc_id = ["${aws_vpc.vpc_eks.id}"]
+  vpc_id = "vpc-02846a515d0aa98d6"
 
   ingress {
     description      = "sg_bastion"
@@ -27,7 +31,7 @@ resource "aws_security_group" "sg_bastion"{
 resource "aws_security_group" "sg_eks"{
   name = "sg_eks"
   description = "security group for EKS"
-  vpc_id = ["${aws_vpc.vpc_eks.id}"]
+  vpc_id = "vpc-02846a515d0aa98d6"
 
   ingress {
     description      = "sg_eks"
@@ -45,10 +49,10 @@ resource "aws_security_group" "sg_eks"{
 resource "aws_security_group" "sg_db"{
   name = "sg_db"
   description = "security group for database"
-  vpc_id = ["${aws_vpc.vpc_eks.id}"]
+  vpc_id = "vpc-02846a515d0aa98d6"
 
   ingress {
-    description      = "sg_eks"
+    description      = "sg_db"
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
@@ -56,6 +60,6 @@ resource "aws_security_group" "sg_db"{
   }
   depends_on = [aws_security_group.sg_bastion]
   tags = {
-    Name = "sg_eks"
+    Name = "sg_db"
   }
 }

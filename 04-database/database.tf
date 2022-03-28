@@ -1,13 +1,24 @@
+resource "aws_db_subnet_group" "db_subnet_group_postgre" {
+  name       = "db_subnet_group_postgre"
+  subnet_ids = ["subnet-0bbb86e0af8d3045e", "subnet-00715d0558fab527d"]
+
+  tags = {
+    Name = "Postgre-Subnet-Group"
+  }
+}
+
+
 resource "aws_db_instance" "postgresql" {
-    allocated_storage = 10
+    allocated_storage = 5
     identifier = "dbpostgre"
-    torage_type = "gp2"
+    storage_type = "gp2"
     engine = "postgres"
     engine_version = "13.4"
     instance_class = "db.t3.micro"
-    name = "postdatabase"
-    username = "admin"
-    password = "admin"
-    vpc_security_group_ids = [ "${aws_security_group.sg_bastion.id}" ]
-    db_subnet_group_name = ["${aws_subnet.priv-subnet1.id}", "${aws_subnet.priv-subnet2.id}"]
+    db_name = "postdatabase"
+    username = "master"
+    password = "master123"
+    vpc_security_group_ids = ["sg-0a27976a260c7edce"]
+    db_subnet_group_name = aws_db_subnet_group.db_subnet_group_postgre.name
+    depends_on = [aws_db_subnet_group.db_subnet_group_postgre]
 }
