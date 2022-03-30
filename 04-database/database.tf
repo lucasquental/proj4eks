@@ -1,6 +1,6 @@
 resource "aws_db_subnet_group" "db_subnet_group_postgre" {
   name       = "db_subnet_group_postgre"
-  subnet_ids = ["subnet-0bbb86e0af8d3045e", "subnet-00715d0558fab527d"]
+  subnet_ids = ["subnet-0d88b5acac8d6acc3", "subnet-0464fed6b695ca9fe"]
 
   tags = {
     Name = "Postgre-Subnet-Group"
@@ -18,7 +18,7 @@ resource "aws_db_instance" "postgresql" {
     db_name = "postdatabase"
     username = "master"
     password = "master123"
-    vpc_security_group_ids = ["sg-0a27976a260c7edce"]
+    vpc_security_group_ids = ["sg-0ebe8a304c6c5c9c5"]
     db_subnet_group_name = aws_db_subnet_group.db_subnet_group_postgre.name
     depends_on = [aws_db_subnet_group.db_subnet_group_postgre]
 }
