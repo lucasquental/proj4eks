@@ -32,13 +32,12 @@ module "eks" {
   version = "17.24.0"
   cluster_version = "1.21"
   cluster_name    = "terraform_cluster_homolog"
-  vpc_id          = "vpc-0cbf736f3b24eeb20"
-  subnets         = ["subnet-03f5873486637ea01", "subnet-0c19b5235bf61be86"]
+  vpc_id          = "vpc-033f0b404715bffc2"
+  subnets         = ["subnet-0464fed6b695ca9fe", "subnet-0d88b5acac8d6acc3"]
 
   worker_groups = [
     {
-      asg_capacity_type   = "SPOT"
-      instance_type  = ["t3.small", "t3.medium"]
+      instance_type  = "t3.small"
       asg_max_size  = 3
     }
   ]
