@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "sa-east-1"
+  region = "us-east-2"
 }
 
 resource "aws_instance" "bastion_eks"{
-  ami = "ami-090006f29ecb2d79a"
+  ami = "ami-0fb653ca2d320ac1"
   key_name = "bastion_eks"
   instance_type = "t2.micro"
   subnet_id = "subnet-0e1ddd70d6d050766"

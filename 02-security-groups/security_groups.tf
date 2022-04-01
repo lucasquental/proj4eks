@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "sa-east-1"
+  region = "us-east-2"
 }
 
 resource "aws_security_group" "sg_bastion"{

@@ -13,7 +13,7 @@ provider "kubernetes" {
 }
 
 provider "aws"{
-    region = "sa-east-1"
+    region = "us-east-2"
 }
 
 terraform {
@@ -29,7 +29,7 @@ terraform {
 
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
-  version = "17.24.0"
+  version         = "17.24.0"
   cluster_version = "1.21"
   cluster_name    = "terraform_cluster_homolog"
   vpc_id          = "vpc-0ea5b2d621d5d7ca8"
