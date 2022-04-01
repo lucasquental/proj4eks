@@ -1,16 +1,21 @@
+provider "remote-exec" {
+  command = "git clone https://github.com/DefectDojo/django-DefectDojo/tree/dev/helm"
+}
+
+
 provider "helm"{
   kubernetes {
     config_path = "~/.kube/config"
   }
 }
 
-resource "helm_release" "proj2k8s" {
-  name       = "prod"
+resource "helm_release" "defectdojo" {
+  name       = "defectdojo"
 
   repository = "./"
-  chart      = "prod"
+  chart      = "defectdojo"
 
   values = [
-    file("./values.yaml")
+    file("./defectdojo/values.yaml")
   ]
 }
