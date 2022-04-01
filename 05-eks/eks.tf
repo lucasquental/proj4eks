@@ -32,8 +32,8 @@ module "eks" {
   version = "17.24.0"
   cluster_version = "1.21"
   cluster_name    = "terraform_cluster_homolog"
-  vpc_id          = "vpc-033f0b404715bffc2"
-  subnets         = ["subnet-0464fed6b695ca9fe", "subnet-0d88b5acac8d6acc3"]
+  vpc_id          = "vpc-0ea5b2d621d5d7ca8"
+  subnets         = ["subnet-0e1ddd70d6d050766", "subnet-0bd94bbc91c00da8c"]
 
   worker_groups = [
     {

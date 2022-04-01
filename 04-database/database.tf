@@ -10,7 +10,7 @@ resource "aws_db_subnet_group" "db_subnet_group_postgre" {
 
 resource "aws_db_instance" "postgresql" {
     allocated_storage = 5
-    identifier = "dbpostgre"
+    identifier = "PostgreSQL"
     storage_type = "gp2"
     engine = "postgres"
     engine_version = "13.4"
