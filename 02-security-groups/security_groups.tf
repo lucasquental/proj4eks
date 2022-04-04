@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_security_group" "sg_bastion"{
   name = "sg_bastion"
   description = "security group for Bastion"
-  vpc_id = "vpc-0ea5b2d621d5d7ca8"
+  vpc_id = "vpc-0afe33265d756f748"
 
   ingress {
     description      = "ssh_port"
@@ -31,7 +31,7 @@ resource "aws_security_group" "sg_bastion"{
 resource "aws_security_group" "sg_eks"{
   name = "sg_eks"
   description = "security group for EKS"
-  vpc_id = "vpc-0ea5b2d621d5d7ca8"
+  vpc_id = "vpc-0afe33265d756f748"
 
   ingress {
     description      = "ssh_port"
@@ -49,7 +49,7 @@ resource "aws_security_group" "sg_eks"{
 resource "aws_security_group" "sg_db"{
   name = "sg_db"
   description = "security group for database"
-  vpc_id = "vpc-0ea5b2d621d5d7ca8"
+  vpc_id = "vpc-0afe33265d756f748"
 
   ingress {
     description      = "ssh_port"

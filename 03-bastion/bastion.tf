@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "bastion_eks"{
-  ami = "ami-0fb653ca2d320ac1"
+  ami = "ami-0fb653ca2d3203ac1"
   key_name = "bastion_eks"
   instance_type = "t2.micro"
-  subnet_id = "subnet-0e1ddd70d6d050766"
-  vpc_security_group_ids = ["sg-09fdeca5b3cdd5c6d"]
+  subnet_id = "subnet-058f13a060a7fa00c"
+  vpc_security_group_ids = ["sg-0bc27556232595f10"]
 
   tags = {
     Name = "bastion_eks"
