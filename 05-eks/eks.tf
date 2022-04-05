@@ -12,8 +12,8 @@ provider "kubernetes" {
   token                  = data.aws_eks_cluster_auth.eks.token
 }
 
-provider "aws"{
-    region = "us-east-2"
+provider "aws" {
+  region = "us-east-2"
 }
 
 terraform {
@@ -27,17 +27,39 @@ terraform {
   }
 }
 
+data "aws_vpc" "selected" {
+  filter {
+    name   = "tag:Name"
+    values = ["vpc_eks"]
+  }
+}
+
+
+
+data "aws_subnets" "private" {
+
+  filter {
+    name   = "tag:Name"
+    values = ["*private*"]
+  }
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.selected.id]
+  }
+
+}
+
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "17.24.0"
   cluster_version = "1.21"
   cluster_name    = "terraform_cluster_homolog"
-  vpc_id          = "vpc-0afe33265d756f748"
-  subnets         = ["subnet-058f13a060a7fa00c", "subnet-06d4a4e1436c4ed72"]
+  vpc_id          = data.aws_vpc.selected.id
+  subnets         = data.aws_subnets.private.ids
 
   worker_groups = [
     {
-      instance_type  = "t3.medium"
+      instance_type = "t3.small"
       asg_max_size  = 3
     }
   ]

@@ -1,11 +1,11 @@
-provider "helm"{
+provider "helm" {
   kubernetes {
     config_path = "~/.kube/config"
   }
 }
 
 resource "helm_release" "defectdojo" {
-  name       = "defectdojo"
+  name = "defectdojo"
 
   repository = "./"
   chart      = "defectdojo"
