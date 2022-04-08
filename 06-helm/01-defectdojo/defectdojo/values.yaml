@@ -410,7 +410,7 @@ redis:
 # extraSecrets:
 #   DD_SOCIAL_AUTH_AUTH0_SECRET: 'xxx'
 extraConfigs: {
-  DD_DATABASE_URL=dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com
+  DD_DATABASE_URL=postgresql://master:master123@dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com:5432/defectdojo
   DD_DATABASE_ENGINE=django.db.backends.postgresql
   DD_DATABASE_HOST=dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com
   DD_DATABASE_PORT=5432
