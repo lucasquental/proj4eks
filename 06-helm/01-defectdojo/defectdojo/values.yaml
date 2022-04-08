@@ -150,6 +150,7 @@ celery:
   extraVolumes: []
 
 django:
+  serviceType: LoadBalancer
   annotations: {}
   affinity: {}
   ingress:
