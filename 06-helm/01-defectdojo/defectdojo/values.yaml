@@ -289,7 +289,7 @@ postgresql:
   serviceAccount:
     enabled: true
   postgresqlUsername: master
-  postgresqlPassword: "bWFzdGVyMTIz"
+  postgresqlPassword: "master123"
   postgresqlDatabase: dbpostgre
   existingSecret: defectdojo-postgresql-specific
   secretKey: postgresql-password
@@ -417,5 +417,5 @@ extraConfigs: {
   DD_DATABASE_PORT=5432
   DD_DATABASE_NAME=dbpostgre
   DD_DATABASE_USER=master
-  DD_DATABASE_PASSWORD=bWFzdGVyMTIz
+  DD_DATABASE_PASSWORD=master123
 }
