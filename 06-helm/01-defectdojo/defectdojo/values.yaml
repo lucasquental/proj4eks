@@ -285,12 +285,12 @@ mysql:
   # mysqlServer: "127.0.0.1"
 
 postgresql:
-  enabled: false
+  enabled: true
   serviceAccount:
     enabled: true
-  postgresqlUsername: master
-  postgresqlPassword: "master123"
-  postgresqlDatabase: dbpostgre
+  postgresqlUsername: defectdojo
+  postgresqlPassword: ""
+  postgresqlDatabase: defectdojo
   existingSecret: defectdojo-postgresql-specific
   secretKey: postgresql-password
   persistence:
