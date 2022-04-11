@@ -19,9 +19,9 @@ createPostgresqlSecret: true
 # Configuration value to select database type
 # Option to use "postgresql" or "mysql" database type, by default "mysql" is chosen
 # Set the "enable" field to true of the database type you select (if you want to use internal database) and false of the one you don't select
-database: postgresql
+database: dbpostgre
 # Primary hostname of instance
-host: defectdojo.default.minikube.local
+host: dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com
 
 # optional list of alternative hostnames to use that gets appended to
 # DD_ALLOWED_HOSTS. This is necessary when your local hostname does not match
