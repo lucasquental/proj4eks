@@ -289,7 +289,7 @@ postgresql:
   serviceAccount:
     enabled: true
   postgresqlUsername: master
-  postgresqlPassword: "master123"
+  postgresqlPassword: "bWFzdGVyMTIz"
   postgresqlDatabase: dbpostgre
   existingSecret: defectdojo-postgresql-specific
   secretKey: postgresql-password
