@@ -320,7 +320,7 @@ postgresql:
 
   # To use an external PostgreSQL instance, set enabled to false and uncomment
   # the line below:
-  postgresServer: "dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com"
+  postgresServer: "10.0.6.148"
   master:
     affinity: {}
     nodeSelector: {}
