@@ -21,7 +21,7 @@ createPostgresqlSecret: true
 # Set the "enable" field to true of the database type you select (if you want to use internal database) and false of the one you don't select
 database: postgresql
 # Primary hostname of instance
-host: defectdojo.default.minikube.local
+host: defectdojo.opus-software.com.br
 
 # optional list of alternative hostnames to use that gets appended to
 # DD_ALLOWED_HOSTS. This is necessary when your local hostname does not match
@@ -57,7 +57,7 @@ tests:
 
 admin:
   user: admin
-  password:
+  password: admin
   firstName: Administrator
   lastName: User
   mail: admin@defectdojo.local
@@ -288,9 +288,9 @@ postgresql:
   enabled: false
   serviceAccount:
     enabled: false
-  postgresqlUsername: defectdojo
-  postgresqlPassword: ""
-  postgresqlDatabase: defectdojo
+  postgresqlUsername: master
+  postgresqlPassword: "master123"
+  postgresqlDatabase: dbpostgre
   existingSecret: defectdojo-postgresql-specific
   secretKey: postgresql-password
   persistence:
