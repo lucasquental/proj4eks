@@ -288,9 +288,9 @@ postgresql:
   enabled: false
   serviceAccount:
     enabled: false
-  postgresqlUsername: defectdojo
-  postgresqlPassword: ""
-  postgresqlDatabase: defectdojo
+  postgresqlUsername: master
+  postgresqlPassword: "master123"
+  postgresqlDatabase: dbpostgre
   existingSecret: defectdojo-postgresql-specific
   secretKey: postgresql-password
   persistence:
