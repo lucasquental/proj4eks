@@ -87,7 +87,7 @@ resource "aws_security_group" "sg_db" {
     from_port       = 5432
     to_port         = 5432
     protocol        = "tcp"
-    cidr_blocks = ["0.0.0.0./0"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   depends_on = [aws_security_group.sg_bastion]
