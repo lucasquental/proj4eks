@@ -66,7 +66,7 @@ resource "aws_security_group" "sg_db" {
     security_groups = ["${aws_security_group.sg_bastion.id}"]
   }
 
-    ingress {
+  ingress {
     description = "ssh_port"
     from_port   = 22
     to_port     = 22
@@ -80,6 +80,14 @@ resource "aws_security_group" "sg_db" {
     to_port         = 5432
     protocol        = "tcp"
     security_groups = ["${aws_security_group.sg_bastion.id}"]
+  }
+
+  ingress {
+    description     = "db_port"
+    from_port       = 5432
+    to_port         = 5432
+    protocol        = "tcp"
+    cidr_blocks = ["0.0.0.0./0"]
   }
 
   depends_on = [aws_security_group.sg_bastion]
