@@ -1,15 +1,15 @@
 ---
 # Global settings
 # create defectdojo specific secret
-createSecret: true
+createSecret: false
 # create rabbitmq secret in defectdojo chart, outside of rabbitmq chart
-createRabbitMqSecret: true
+createRabbitMqSecret: false
 # create redis secret in defectdojo chart, outside of redis chart
-createRedisSecret: true
+createRedisSecret: false
 # create mysql secret in defectdojo chart, outside of mysql chart
-createMysqlSecret: true
+createMysqlSecret: false
 # create postgresql secret in defectdojo chart, outside of postgresql chart
-createPostgresqlSecret: true
+createPostgresqlSecret: false
 # Track configuration (trackConfig): will automatically respin application pods in case of config changes detection
 # can be:
 # - disabled, default
@@ -321,6 +321,15 @@ postgresql:
   # To use an external PostgreSQL instance, set enabled to false and uncomment
   # the line below:
   postgresServer: "10.0.6.148"
+
+  DD_DATABASE_URL: "postgresql://master:master123@dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com:5432/dbpostgre"
+  DD_DATABASE_ENGINE: "django.db.backends.postgresql"
+  DD_DATABASE_HOST: "dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com"
+  DD_DATABASE_PORT: "5432"
+  DD_DATABASE_NAME: "dbpostgre"
+  DD_DATABASE_USER: "master"
+  DD_DATABASE_PASSWORD: "master123"
+
   master:
     affinity: {}
     nodeSelector: {}
@@ -410,13 +419,4 @@ redis:
 # NOTE  This is just an exmaple, do not store sensitive data in plain text form, better inject it during the deployment/upgrade by --set extraSecrets.secret=someSecret
 # extraSecrets:
 #   DD_SOCIAL_AUTH_AUTH0_SECRET: 'xxx'
-extraConfigs: 
-
-  DD_DATABASE_URL: "postgresql://master:master123@dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com:5432/dbpostgre"
-  DD_DATABASE_ENGINE: "django.db.backends.postgresql"
-  DD_DATABASE_HOST: "dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com"
-  DD_DATABASE_PORT: "5432"
-  DD_DATABASE_NAME: "dbpostgre"
-  DD_DATABASE_USER: "master"
-  DD_DATABASE_PASSWORD: "master123"
-
+extraConfigs: {}
