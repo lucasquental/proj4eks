@@ -90,6 +90,22 @@ resource "aws_security_group" "sg_db" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  egress {
+    description = "ssh_port"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    description = "db_port"
+    from_port   = 5432
+    to_port     = 5432
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   depends_on = [aws_security_group.sg_bastion]
   tags = {
     Name = "sg_db"
