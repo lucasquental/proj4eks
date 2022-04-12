@@ -69,8 +69,8 @@ module "eks" {
     }
   ]
   map_users = [{
-    userarn = "arn:aws:iam::168112612783:user/lucas.quental"
-    username = "lucas.quental"
+    userarn = "arn:aws:iam::168112612783:user/jp.matheus"
+    username = "jp.matheus"
     groups = ["system:masters"]
   }]
 
