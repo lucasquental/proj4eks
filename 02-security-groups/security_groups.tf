@@ -74,13 +74,13 @@ resource "aws_security_group" "sg_db" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  ingress {
-    description     = "db_port"
-    from_port       = 5432
-    to_port         = 5432
-    protocol        = "tcp"
-    security_groups = ["${aws_security_group.sg_bastion.id}"]
-  }
+  #ingress {
+  # description     = "db_port"
+  # from_port       = 5432
+  # to_port         = 5432
+  # protocol        = "tcp"
+  # security_groups = ["${aws_security_group.sg_bastion.id}"]
+  #}
 
   ingress {
     description     = "db_port"
