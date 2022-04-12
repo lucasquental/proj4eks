@@ -60,13 +60,13 @@ module "eks" {
   cluster_version = "1.21"
   cluster_name    = "terraform_cluster_homolog"
   vpc_id          = data.aws_vpc.selected.id
-  vpc_security_group_ids = data.aws_security_group.selected.id
   subnets         = data.aws_subnets.private.ids
 
   worker_groups = [
     {
       instance_type = "t3.small"
       asg_max_size  = 3
+      vpc_security_group_ids = [data.aws_security_group.selected.id]
     }
   ]
   map_users = [{
