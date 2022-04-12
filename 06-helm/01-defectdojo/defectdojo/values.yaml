@@ -287,7 +287,7 @@ mysql:
 postgresql:
   enabled: false
   serviceAccount:
-    enabled: true
+    enabled: false
   postgresqlUsername: master
   postgresqlPassword: "master123"
   postgresqlDatabase: dbpostgre
@@ -321,14 +321,6 @@ postgresql:
   # To use an external PostgreSQL instance, set enabled to false and uncomment
   # the line below:
   postgresServer: "dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com"
-
-  DD_DATABASE_URL: "postgresql://master:master123@dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com:5432/dbpostgre"
-  DD_DATABASE_ENGINE: "django.db.backends.postgresql"
-  DD_DATABASE_HOST: "dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com"
-  DD_DATABASE_PORT: "5432"
-  DD_DATABASE_NAME: "dbpostgre"
-  DD_DATABASE_USER: "master"
-  DD_DATABASE_PASSWORD: "master123"
 
   master:
     affinity: {}
@@ -419,4 +411,12 @@ redis:
 # NOTE  This is just an exmaple, do not store sensitive data in plain text form, better inject it during the deployment/upgrade by --set extraSecrets.secret=someSecret
 # extraSecrets:
 #   DD_SOCIAL_AUTH_AUTH0_SECRET: 'xxx'
-extraConfigs: {}
+extraConfigs: 
+
+  DD_DATABASE_URL: "postgresql://master:master123@dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com:5432/dbpostgre"
+  DD_DATABASE_ENGINE: "django.db.backends.postgresql"
+  DD_DATABASE_HOST: "dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com"
+  DD_DATABASE_PORT: "5432"
+  DD_DATABASE_NAME: "dbpostgre"
+  DD_DATABASE_USER: "master"
+  DD_DATABASE_PASSWORD: "master123"
