@@ -57,7 +57,7 @@ tests:
 
 admin:
   user: admin
-  password: admin
+  password:
   firstName: Administrator
   lastName: User
   mail: admin@defectdojo.local
