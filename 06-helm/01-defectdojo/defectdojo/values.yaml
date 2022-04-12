@@ -21,7 +21,7 @@ createPostgresqlSecret: true
 # Set the "enable" field to true of the database type you select (if you want to use internal database) and false of the one you don't select
 database: postgresql
 # Primary hostname of instance
-host: dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com
+host: defectdojo.default.minikube.local
 
 # optional list of alternative hostnames to use that gets appended to
 # DD_ALLOWED_HOSTS. This is necessary when your local hostname does not match
@@ -150,7 +150,6 @@ celery:
   extraVolumes: []
 
 django:
-  serviceType: LoadBalancer
   annotations: {}
   affinity: {}
   ingress:
@@ -160,7 +159,7 @@ django:
     secretName: defectdojo-tls
     annotations: 
       # Restricts the type of ingress controller that can interact with our chart (nginx, traefik, ...)
-      kubernetes.io/ingress.class: nginx
+      # kubernetes.io/ingress.class: nginx
       # Depending on the size and complexity of your scans, you might want to increase the default ingress timeouts if you see repeated 504 Gateway Timeouts
       # nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
       # nginx.ingress.kubernetes.io/proxy-send-timeout: "1800"
@@ -177,6 +176,7 @@ django:
         memory: 256Mi
   nodeSelector: {}
   replicas: 1
+  serviceType: LoadBalancer
   tolerations: []
   uwsgi:
     livenessProbe:
