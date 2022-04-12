@@ -320,7 +320,7 @@ postgresql:
 
   # To use an external PostgreSQL instance, set enabled to false and uncomment
   # the line below:
-  postgresServer: "10.0.6.148"
+  postgresServer: "dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com"
 
   DD_DATABASE_URL: "postgresql://master:master123@dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com:5432/dbpostgre"
   DD_DATABASE_ENGINE: "django.db.backends.postgresql"
