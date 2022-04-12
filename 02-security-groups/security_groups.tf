@@ -102,7 +102,7 @@ resource "aws_security_group" "sg_db" {
     description = "db_port"
     from_port   = 5432
     to_port     = 5432
-    protocol    = "-1"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
