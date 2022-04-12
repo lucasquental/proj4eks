@@ -66,6 +66,14 @@ resource "aws_security_group" "sg_db" {
     security_groups = ["${aws_security_group.sg_bastion.id}"]
   }
 
+    ingress {
+    description = "ssh_port"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   ingress {
     description     = "db_port"
     from_port       = 5432

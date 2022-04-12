@@ -66,7 +66,6 @@ module "eks" {
     {
       instance_type = "t3.small"
       asg_max_size  = 3
-      vpc_security_group_ids = [data.aws_security_group.selected.id]
     }
   ]
   map_users = [{
