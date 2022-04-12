@@ -287,7 +287,7 @@ mysql:
 postgresql:
   enabled: false
   serviceAccount:
-    enabled: true
+    enabled: false
   postgresqlUsername: defectdojo
   postgresqlPassword: ""
   postgresqlDatabase: defectdojo
