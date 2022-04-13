@@ -155,7 +155,7 @@ django:
   ingress:
     enabled: true
     ingressClassName: ""
-    activateTLS: true
+    activateTLS: false
     secretName: defectdojo-tls
     annotations: 
       # Restricts the type of ingress controller that can interact with our chart (nginx, traefik, ...)
@@ -197,7 +197,7 @@ django:
     app_settings:
       processes: 2
       threads: 2
-    enable_debug: false  # this also requires DD_DEBUG to be set to True
+    enable_debug: true  # this also requires DD_DEBUG to be set to True
     certificates:
     # includes additional CA certificate as volume, it refrences REQUESTS_CA_BUNDLE env varible
     # to create configMap `kubectl create  cm defectdojo-ca-certs --from-file=ca.crt`
@@ -420,5 +420,4 @@ extraConfigs:
   DD_DATABASE_PASSWORD: "master123"
   DD_CSRF_COOKIE_HTTPONLY: "False"
   DD_CSRF_COOKIE_SECURE: "False"
-
-  #DD_DATABASE_URL: "postgresql://master:master123@dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com:5432/dbpostgre"
+  DD_DEBUG: "True"
