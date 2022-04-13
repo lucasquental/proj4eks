@@ -419,4 +419,6 @@ extraConfigs:
   DD_DATABASE_USER: "master"
   DD_DATABASE_PASSWORD: "master123"
   DD_CSRF_COOKIE_HTTPONLY: "False"
+  DD_CSRF_COOKIE_SECURE: "False"
+
   #DD_DATABASE_URL: "postgresql://master:master123@dbpostgre.ccp0ua3xnanj.us-east-2.rds.amazonaws.com:5432/dbpostgre"
