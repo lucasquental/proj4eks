@@ -154,7 +154,7 @@ django:
   affinity: {}
   ingress:
     enabled: true
-    ingressClassName: ""
+    ingressClassName: "nginx"
     activateTLS: false
     secretName: defectdojo-tls
     annotations: 
@@ -176,7 +176,7 @@ django:
         memory: 256Mi
   nodeSelector: {}
   replicas: 1
-  serviceType: LoadBalancer
+  serviceType: ClusterIP
   tolerations: []
   uwsgi:
     livenessProbe:
