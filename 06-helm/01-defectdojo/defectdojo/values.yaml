@@ -21,7 +21,7 @@ createPostgresqlSecret: true
 # Set the "enable" field to true of the database type you select (if you want to use internal database) and false of the one you don't select
 database: postgresql
 # Primary hostname of instance
-host: defectdojo.opus-software.com.br
+host: defectdojo-lab.opus-software.com.br
 
 # optional list of alternative hostnames to use that gets appended to
 # DD_ALLOWED_HOSTS. This is necessary when your local hostname does not match
