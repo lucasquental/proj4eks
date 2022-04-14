@@ -1,5 +1,7 @@
 provider "helm" {
-  kubernetes {}
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
 }
 
 resource "helm_release" "ingress-nginx" {
