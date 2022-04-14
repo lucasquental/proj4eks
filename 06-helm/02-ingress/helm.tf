@@ -4,7 +4,7 @@ provider "helm" {
   }
 }
 
-resource "helm_release" "ingress-nginx" {
+resource "helm_release" "nginx-controller" {
   name       = "ingress-nginx"
   namespace = "nginx-controller"
   repository = "https://kubernetes.github.io/ingress-nginx/"
