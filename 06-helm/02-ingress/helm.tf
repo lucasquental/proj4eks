@@ -6,7 +6,7 @@ provider "helm" {
 
 resource "helm_release" "ingress-nginx" {
   name       = "ingress-nginx"
-  namespace = "nginx-controller"
+  namespace = "ingress-nginx"
   repository = "https://kubernetes.github.io/ingress-nginx/"
   chart      = "ingress-nginx"
   dependency_update = true
