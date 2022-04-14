@@ -4,7 +4,7 @@ provider "helm" {
   }
 }
 
-data  " helm_repository "  " entrada " {
+data  "helm_repository" "entrada" {
   name =  " ingress " 
   url   =  " https://kubernetes.github.io/ingress-nginx/ " 
 }
