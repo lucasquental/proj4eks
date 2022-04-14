@@ -12,3 +12,8 @@ resource "helm_release" "nginx-controller" {
   dependency_update = true
   create_namespace = true
 }
+
+  set {
+    name  = "controller.ingressClassResource.enabled"
+    value = "true"
+  }
