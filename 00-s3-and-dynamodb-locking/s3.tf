@@ -1,12 +1,12 @@
 provider "aws" {
-  region  = "us-east-2"
-  profile = "default"
+  region  = var.region
+  profile = var.profile
 }
 
 resource "aws_s3_bucket" "s3_bucket_tfstate" {
-  bucket = "s3-bucket-tfstate-proj42"
+  bucket = var.bucket
 
   tags = {
-    Name = "S3 Remote Terraform State Store"
+    Name = var.bucket_tag_name
   }
 }
