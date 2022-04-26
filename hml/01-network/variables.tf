@@ -22,3 +22,9 @@ variable "private_subnets" {
   type        = list(string)
   description = ""
 }
+
+variable "bucket" {}
+
+variable "bucket_key" {}
+
+variable "dynamodb_table" {}
