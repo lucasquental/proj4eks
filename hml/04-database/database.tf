@@ -2,14 +2,14 @@
 data "aws_security_group" "selected" {
   filter {
     name   = "tag:Name"
-    values = ["sg_db"]
+    values = [var.security_group]
   }
 }
 
 data "aws_vpc" "selected" {
   filter {
     name   = "tag:Name"
-    values = ["vpc_eks"]
+    values = [var.vpc_eks]
   }
 }
 
@@ -17,7 +17,7 @@ data "aws_subnets" "private" {
   
   filter {
     name = "tag:Name"
-    values = ["*private*"]
+    values = [var.aws_subnet]
   }
 
   filter {
@@ -28,7 +28,7 @@ data "aws_subnets" "private" {
 }
 
 resource "aws_db_subnet_group" "db_subnet_group_postgre" {
-  name       = "db_subnet_group_postgre"
+  name       = var.name
   subnet_ids = data.aws_subnets.private.ids
 
   tags = {
@@ -39,14 +39,14 @@ resource "aws_db_subnet_group" "db_subnet_group_postgre" {
 
 resource "aws_db_instance" "postgresql" {
   allocated_storage      = 5
-  identifier             = "dbpostgre"
-  storage_type           = "gp2"
-  engine                 = "postgres"
-  engine_version         = "13.4"
-  instance_class         = "db.t3.micro"
-  db_name                = "dbpostgre"
-  username               = "master"
-  password               = "master123"
+  identifier             = var.identifier
+  storage_type           = var.storage_type
+  engine                 = var.engine
+  engine_version         = var.engine_version
+  instance_class         = var.instance_class
+  db_name                = var.db_name
+  username               = var.username
+  password               = var.password
   vpc_security_group_ids = [data.aws_security_group.selected.id]
   db_subnet_group_name   = aws_db_subnet_group.db_subnet_group_postgre.name
   depends_on             = [aws_db_subnet_group.db_subnet_group_postgre]
