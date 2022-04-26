@@ -17,12 +17,12 @@ provider "aws" {
 }
 
 terraform {
-  required_version = var.terraform_version
+  required_version = ">= 0.14.4"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = var.aws_version
+      version = "3.74.3"
     }
   }
 }
@@ -56,7 +56,7 @@ data "aws_subnets" "private" {
 
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
-  version         = var.eks_version
+  version         = "17.24.0"
   cluster_version = var.eks_cluster_version
   cluster_name    = var.eks_cluster_name
   vpc_id          = data.aws_vpc.selected.id
