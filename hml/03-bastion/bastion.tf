@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = var.aws_region
 }
 
 data "aws_ami" "ubuntu" {
@@ -21,22 +21,22 @@ data "aws_ami" "ubuntu" {
 data "aws_security_group" "selected" {
   filter {
     name   = "tag:Name"
-    values = ["sg_bastion"]
+    values = [var.security_group]
   }
 }
 
 data "aws_subnet" "selected" {
   filter {
     name   = "tag:Name"
-    values = ["vpc_eks-public-us-east-2a"]
+    values = [var.aws_subnet]
   }
 }
 
 
 resource "aws_instance" "bastion_eks" {
   ami                    = data.aws_ami.ubuntu.id
-  key_name               = "proj4-eks"
-  instance_type          = "t3a.micro"
+  key_name               = var.key_name
+  instance_type          = var.instance_type
   subnet_id              = data.aws_subnet.selected.id
   vpc_security_group_ids = [data.aws_security_group.selected.id]
 

@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = var.aws_region
 }
 
 module "vpc" {
@@ -7,11 +7,11 @@ module "vpc" {
   version = "~>3.12.0"
 
   name = "vpc_eks"
-  cidr = "10.0.0.0/16"
+  cidr = var.cidr_block
 
-  azs             = ["us-east-2a", "us-east-2b", "us-east-2c"]
-  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  private_subnets = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
+  azs             = var.availability_zones
+  public_subnets  = var.public_subnets
+  private_subnets = var.private_subnets
 
   enable_nat_gateway   = true
   enable_vpn_gateway   = false
