@@ -10,6 +10,12 @@ port_ssh = "22"
 
 port_db = "5432"
 
+bucket = "s3-bucket-tfstate-proj42"
+
+bucket_key = "02-security-groups/terraform.tfstate"
+
+dynamodb_table = "s3_state_lock"
+
 sg_ingress_rules = [{
   from_port   = 22
   to_port     = 22

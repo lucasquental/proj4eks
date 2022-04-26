@@ -31,3 +31,9 @@ variable "port_db" {
 variable "sg_ingress_rules" {}
 
 variable "sg_egress_rules" {}
+
+variable "bucket" {}
+
+variable "bucket_key" {}
+
+variable "dynamodb_table" {}
