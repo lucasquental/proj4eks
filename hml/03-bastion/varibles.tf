@@ -22,3 +22,9 @@ variable "key_name" {
   description = ""
   type        = string
 }
+
+variable "bucket" {}
+
+variable "bucket_key" {}
+
+variable "dynamodb_table" {}
