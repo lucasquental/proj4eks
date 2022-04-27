@@ -1,21 +1,49 @@
-variable "aws_region" {}
+variable "aws_region" {
+    type = string
+}
 
-variable "vpc_aws" {}
+variable "vpc_aws" {
+    type = string
+}
 
-variable "tag_name_bastion" {}
-variable "tag_name_eks" {}
-variable "tag_name_db" {}
+variable "tag_name_bastion" {
+    type = string
+}
+variable "tag_name_eks" {
+    type = string
+}
+variable "tag_name_db" {
+    type = string
+}
 
-variable "description_bastion" {}
-variable "description_eks" {}
-variable "description_db" {}
+variable "description_bastion" {
+    type = string
+}
+variable "description_eks" {
+    type = string
+}
+variable "description_db" {
+    type = string
+}
 
-variable "cidr_block" {}
+variable "cidr_block" {
+    type = string
+}
 
-variable "ingress_rules_bastion" {}
-variable "egress_rules_bastion" {}
+variable "ingress_rules_bastion" {
+    type = string
+}
+variable "egress_rules_bastion" {
+    type = string
+}
 
-variable "ingress_rules_eks" {}
+variable "ingress_rules_eks" {
+    type = string
+}
 
-variable "sg_ingress_rules" {}
-variable "sg_egress_rules" {}
+variable "sg_ingress_rules" {
+    type = string
+}
+variable "sg_egress_rules" {
+    type = string
+}

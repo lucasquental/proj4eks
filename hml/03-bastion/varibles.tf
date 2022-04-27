@@ -1,17 +1,35 @@
-variable "aws_region" {}
+variable "aws_region" {
+    type = string
+}
 
-variable "security_group" {}
+variable "security_group" {
+    type = string
+}
 
-variable "aws_subnet" {}
+variable "aws_subnet" {
+    type = string
+}
 
-variable "instance_type" {}
+variable "instance_type" {
+    type = string
+}
 
-variable "key_name" {}
+variable "key_name" {
+    type = string
+}
 
-variable "tag_bastion" {}
+variable "tag_bastion" {
+    type = string
+}
 
-variable "ami_name" {}
+variable "ami_name" {
+    type = string
+}
 
-variable "ami_virtualization-type" {}
+variable "ami_virtualization-type" {
+    type = string
+}
 
-variable "ami_owners" {}
+variable "ami_owners" {
+    type = string
+}
