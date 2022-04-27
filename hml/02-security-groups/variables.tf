@@ -1,39 +1,21 @@
-variable "aws_region" {
-  type        = string
-  description = ""
-}
+variable "aws_region" {}
 
-variable "vpc_aws" {
-  type        = string
-  description = ""
-}
+variable "vpc_aws" {}
 
-variable "cidr_block" {
-  type        = string
-  description = ""
-}
+variable "tag_name_bastion" {}
+variable "tag_name_eks" {}
+variable "tag_name_db" {}
 
-variable "port" {
-  type        = string
-  description = ""
-}
+variable "description_bastion" {}
+variable "description_eks" {}
+variable "description_db" {}
 
-variable "port_ssh" {
-  type        = string
-  description = ""
-}
+variable "cidr_block" {}
 
-variable "port_db" {
-  type        = string
-  description = ""
-}
+variable "ingress_rules_bastion" {}
+variable "egress_rules_bastion" {}
+
+variable "ingress_rules_eks" {}
 
 variable "sg_ingress_rules" {}
-
 variable "sg_egress_rules" {}
-
-variable "bucket" {}
-
-variable "bucket_key" {}
-
-variable "dynamodb_table" {}

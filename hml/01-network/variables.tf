@@ -1,12 +1,6 @@
-variable "aws_region" {
-  type        = string
-  description = ""
-}
+variable "aws_region" {}
 
-variable "cidr_block" {
-  type        = string
-  description = ""
-}
+variable "cidr_block" {}
 
 variable "availability_zones" {
   type        = list(string)
@@ -23,8 +17,4 @@ variable "private_subnets" {
   description = ""
 }
 
-variable "bucket" {}
-
-variable "bucket_key" {}
-
-variable "dynamodb_table" {}
+variable "vpc_name" {}

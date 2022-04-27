@@ -7,15 +7,15 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+    values = [var.ami_name]
   }
 
   filter {
     name   = "virtualization-type"
-    values = ["hvm"]
+    values = [var.ami_virtualization-type]
   }
 
-  owners = ["099720109477"]
+  owners = [var.ami_owners]
 }
 
 data "aws_security_group" "selected" {
@@ -41,6 +41,6 @@ resource "aws_instance" "bastion_eks" {
   vpc_security_group_ids = [data.aws_security_group.selected.id]
 
   tags = {
-    Name = "bastion_eks"
+    Name = var.tag_bastion
   }
 }

@@ -32,13 +32,13 @@ resource "aws_db_subnet_group" "db_subnet_group_postgre" {
   subnet_ids = data.aws_subnets.private.ids
 
   tags = {
-    Name = "Postgre-Subnet-Group"
+    Name = var.tag_name
   }
 }
 
 
 resource "aws_db_instance" "postgresql" {
-  allocated_storage      = 5
+  allocated_storage      = var.allocated_storage
   identifier             = var.identifier
   storage_type           = var.storage_type
   engine                 = var.engine

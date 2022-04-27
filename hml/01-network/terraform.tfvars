@@ -8,8 +8,4 @@ public_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
 
 private_subnets = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
 
-bucket = "s3-bucket-tfstate-proj42"
-
-bucket_key = "01-network/terraform.tfstate"
-
-dynamodb_table = "s3_state_lock"
+vpc_name = "vpc_eks"

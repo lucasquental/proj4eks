@@ -1,30 +1,17 @@
-variable "aws_region" {
-  type        = string
-  description = ""
-}
+variable "aws_region" {}
 
-variable "security_group" {
-  type        = string
-  description = ""
-}
+variable "security_group" {}
 
-variable "aws_subnet" {
-  type        = string
-  description = ""
-}
+variable "aws_subnet" {}
 
-variable "instance_type" {
-  description = ""
-  type        = string
-}
+variable "instance_type" {}
 
-variable "key_name" {
-  description = ""
-  type        = string
-}
+variable "key_name" {}
 
-variable "bucket" {}
+variable "tag_bastion" {}
 
-variable "bucket_key" {}
+variable "ami_name" {}
 
-variable "dynamodb_table" {}
+variable "ami_virtualization-type" {}
+
+variable "ami_owners" {}

@@ -8,8 +8,10 @@ instance_type = "t3a.micro"
 
 key_name = "proj4-eks"
 
-bucket = "s3-bucket-tfstate-proj42"
+tag_bastion = "bastion_eks"
 
-bucket_key = "03-bastion/terraform.tfstate"
+ami_name = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"
 
-dynamodb_table = "s3_state_lock"
+ami_virtualization-type = "hvm"
+
+ami_owners = "099720109477"

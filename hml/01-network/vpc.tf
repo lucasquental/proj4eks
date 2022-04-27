@@ -6,7 +6,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~>3.12.0"
 
-  name = "vpc_eks"
+  name = var.vpc_name
   cidr = var.cidr_block
 
   azs             = var.availability_zones
@@ -17,7 +17,7 @@ module "vpc" {
   enable_vpn_gateway   = false
   enable_dns_hostnames = true
 
-  single_nat_gateway = true
+  single_nat_gateway     = true
   one_nat_gateway_per_az = false
 
   tags = {

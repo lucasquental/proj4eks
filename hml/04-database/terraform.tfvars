@@ -8,6 +8,8 @@ aws_subnet = "*private*"
 
 name = "db_subnet_group_postgre"
 
+allocated_storage = 5
+
 identifier = "dbpostgre"
 
 storage_type = "gp2"
@@ -23,3 +25,5 @@ db_name = "dbpostgre"
 username = "master"
 
 password = "master123"
+
+tag_name = "Postgre-Subnet-Group"
