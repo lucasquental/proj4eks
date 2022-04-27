@@ -47,3 +47,57 @@ variable "sg_ingress_rules" {
 variable "sg_egress_rules" {
     type = string
 }
+
+variable "ingress_rules_bastion" {  
+    type = list(object({
+    type        = string
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    cidr_block  = string
+    description = string
+  }))
+}
+variable "egress_rules_bastion" {
+    type = list(object({
+    type        = string
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    cidr_block  = string
+    description = string
+  }))
+}
+
+variable "ingress_rules_eks" {
+    type = list(object({
+    type        = string
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    cidr_block  = string
+    description = string
+  }))
+}
+
+variable "sg_ingress_rules" {
+    type = list(object({
+    type        = string
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    cidr_block  = string
+    description = string
+  }))
+}
+variable "sg_egress_rules" {
+    type = list(object({
+    type        = string
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    cidr_block  = string
+    description = string
+  }))
+
+}
