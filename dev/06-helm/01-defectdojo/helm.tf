@@ -5,14 +5,14 @@ provider "helm" {
 }
 
 resource "helm_release" "defectdojo" {
-  name = "defectdojo"
-  namespace = "ddojo"
-  repository = "./"
-  chart      = "defectdojo"
+  name = var.helm_name_defectdojo
+  namespace = var.helm_namespace_defectdojo
+  repository = var.helm_repository_defectdojo
+  chart      = var.helm_chart_defectdojo
   dependency_update = true
   create_namespace = true
 
   values = [
-    file("./defectdojo/values.yaml")
+    file(var.helm_values_defectdojo)
   ]
 }

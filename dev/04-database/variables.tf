@@ -1,25 +1,59 @@
-variable "aws_region" {}
+variable "aws_region" {
+    type = string
+}
 
-variable "security_group" {}
+variable "security_group" {
+    type = string
+}
 
-variable "vpc_eks" {}
+variable "vpc_eks" {
+    type = string
+}
 
-variable "aws_subnet" {}
+variable "aws_subnet" {
+    type = string
+}
 
-variable "name" {}
+variable "name" {
+    type = string
+}
 
-variable "identifier" {}
+variable "allocated_storage" {
+    type = string
+}
 
-variable "storage_type" {}
+variable "identifier" {
+    type = string
+}
 
-variable "engine" {}
+variable "storage_type" {
+    type = string
+}
 
-variable "engine_version" {}
+variable "engine" {
+    type = string
+}
 
-variable "instance_class" {}
+variable "engine_version" {
+    type = string
+}
 
-variable "db_name" {}
+variable "instance_class" {
+    type = string
+}
 
-variable "username" {}
+variable "db_name" {
+    type = string
+}
 
-variable "password" {}
+variable "username" {
+    type = string
+}
+
+variable "password" {
+    type = string
+}
+
+variable "tag_name" {
+    type = string
+}

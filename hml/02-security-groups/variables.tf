@@ -30,24 +30,6 @@ variable "cidr_block" {
     type = string
 }
 
-variable "ingress_rules_bastion" {
-    type = string
-}
-variable "egress_rules_bastion" {
-    type = string
-}
-
-variable "ingress_rules_eks" {
-    type = string
-}
-
-variable "sg_ingress_rules" {
-    type = string
-}
-variable "sg_egress_rules" {
-    type = string
-}
-
 variable "ingress_rules_bastion" {  
     type = list(object({
     type        = string

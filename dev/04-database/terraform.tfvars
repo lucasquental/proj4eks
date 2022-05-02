@@ -1,12 +1,14 @@
 aws_region = "us-east-2"
 
-security_group = "sg_db"
+security_group = "sg_db_dev"
 
-vpc_eks = "vpc_eks"
+vpc_eks = "vpc_eks_dev"
 
 aws_subnet = "*private*"
 
-name = "db_subnet_group_postgre"
+name = "db_subnet_group_postgre_dev"
+
+allocated_storage = 5
 
 identifier = "dbpostgre"
 
@@ -23,3 +25,5 @@ db_name = "dbpostgre"
 username = "master"
 
 password = "master123"
+
+tag_name = "Postgre-Subnet-Group"
