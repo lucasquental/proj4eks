@@ -1,3 +1,7 @@
+terraform {
+  source = "${find_in_parent_folders("terraform-modules")}/02-security-groups"
+}
+
 remote_state{
   backend "s3" {
     encrypt        = true

@@ -1,3 +1,7 @@
+terraform {
+  source = "${find_in_parent_folders("terraform-modules")}/06-helm/00-ingress-nginx"
+}
+
 remote_state{
   backend "s3" {
     encrypt        = true

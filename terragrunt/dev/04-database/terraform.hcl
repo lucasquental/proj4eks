@@ -1,3 +1,7 @@
+terraform {
+  source = "${find_in_parent_folders("terraform-modules")}/04-database"
+}
+
 remote_state{
   backend "s3" {
     encrypt        = true
