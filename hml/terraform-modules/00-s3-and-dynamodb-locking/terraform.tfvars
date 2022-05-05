@@ -1,5 +1,0 @@
-dynamodb_name = "s3_state_lock"
-region = "us-east-2"
-profile = "default"
-bucket = "s3-bucket-tfstate-proj42"
-bucket_tag_name = "S3 Remote Terraform State Store"
