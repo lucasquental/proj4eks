@@ -20,3 +20,19 @@ provider "aws" {
 }
 EOF
 }
+
+inputs = {
+  security_group_eks = "sg_eks"
+
+  vpc_eks = "vpc_eks_dev"
+
+  aws_subnet = "*private*"
+
+  eks_cluster_version = "1.21"
+
+  eks_cluster_name = "terraform_cluster_homolog"
+
+  worker_instance = "t3.small"
+
+  worker_asg_max = 3
+}
