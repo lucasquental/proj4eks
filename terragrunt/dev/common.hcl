@@ -1,5 +1,10 @@
 remote_state{
-  backend "s3" {
+  backend = "s3"
+  generate = {
+    path      = "backend.tf"
+    if_exists = "overwrite"
+  }
+  config = {
     encrypt        = true
     bucket         = "s3-bucket-tfstate-proj42-dev"
     region         = "us-east-2"
