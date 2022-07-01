@@ -1,8 +1,9 @@
-provider "helm" {
-  kubernetes {
-    config_path = "~/.kube/config"
+required_providers {
+    helm = {
+      source  = "hashicorp/helm"
+      version = "2.5.0"
+    }
   }
-}
 
 resource "helm_release" "defectdojo" {
   name = var.helm_name_defectdojo

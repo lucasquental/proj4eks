@@ -17,3 +17,15 @@ inputs = {
 
   helm_values_defectdojo = "./defectdojo/values.yaml"
 }
+
+generate "provider" {
+  path = "provider.tf"
+  if_exists = "overwrite_terragrunt"
+  contents = <<EOF
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
+}
+EOF
+}
