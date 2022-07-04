@@ -6,10 +6,10 @@ remote_state{
   }
   config = {
     encrypt        = true
-    bucket         = "s3-bucket-tfstate-proj42-dev"
+    bucket         = "s3-bucket-tfstate-proj42-hml"
     region         = "us-east-2"
     key            = "${path_relative_to_include()}/terraform.tfstate"
-    dynamodb_table = "s3_state_lock_dev"
+    dynamodb_table = "s3_state_lock_hml"
   }
 }
 
