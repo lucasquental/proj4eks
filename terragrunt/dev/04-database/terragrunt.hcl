@@ -6,6 +6,10 @@ include "common"{
   path = find_in_parent_folders("common.hcl")
 }
 
+locals{
+env_vars = read_terragrunt_config(find_in_parent_folders("env.hcl"))
+}
+
 inputs = {
   security_group = "sg_db_${local.env_vars.locals.env}"
 
