@@ -7,9 +7,9 @@ include "common"{
 }
 
 inputs = {
-  security_group_eks = "sg_eks_dev"
+  security_group_eks = "sg_eks_${local.env_vars.locals.env}"
 
-  vpc_eks = "vpc_eks_dev"
+  vpc_eks = "vpc_eks_${local.env_vars.locals.env}"
 
   aws_subnet = "*private*"
 

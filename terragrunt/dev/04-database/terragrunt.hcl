@@ -7,13 +7,13 @@ include "common"{
 }
 
 inputs = {
-  security_group = "sg_db_dev"
+  security_group = "sg_db_${local.env_vars.locals.env}"
 
-  vpc_eks = "vpc_eks_dev"
+  vpc_eks = "vpc_eks_${local.env_vars.locals.env}"
 
   aws_subnet = "*private*"
 
-  name = "db_subnet_group_postgre_dev"
+  name = "db_subnet_group_postgre_${local.env_vars.locals.env}"
 
   allocated_storage = 5
 

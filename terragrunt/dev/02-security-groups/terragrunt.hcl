@@ -7,11 +7,11 @@ include "common"{
 }
 
 inputs = {
-  vpc_aws = "vpc_eks_dev"
+  vpc_aws = "vpc_eks_${local.env_vars.locals.env}"
   
-  tag_name_bastion = "sg_bastion_dev"
-  tag_name_db      = "sg_db_dev"
-  tag_name_eks     = "sg_eks_dev"
+  tag_name_bastion = "sg_bastion_${local.env_vars.locals.env}"
+  tag_name_db      = "sg_db_${local.env_vars.locals.env}"
+  tag_name_eks     = "sg_eks_${local.env_vars.locals.env}"
 
   description_bastion = "security group for Bastion"
   description_db      = "security group for database"
